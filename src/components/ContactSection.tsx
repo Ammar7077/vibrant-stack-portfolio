@@ -33,8 +33,8 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-4">
+    <footer id="contact" className="bg-[#1A1F2C] text-white">
+      <div className="container mx-auto px-4 py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ const ContactSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
-          <p className="text-muted-foreground">Let's discuss your next project</p>
+          <p className="text-gray-400">Let's discuss your next project</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -54,16 +54,17 @@ const ContactSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-card p-6 rounded-lg text-center"
+              className="bg-[#222632] p-6 rounded-lg text-center border border-gray-700"
             >
-              <div className="mb-4 flex justify-center">{info.icon}</div>
+              <div className="mb-4 flex justify-center text-gray-300">{info.icon}</div>
               <h3 className="font-semibold mb-2">{info.title}</h3>
-              <p className="text-muted-foreground mb-4">{info.value}</p>
+              <p className="text-gray-400 mb-4">{info.value}</p>
               {info.action && (
                 <Button
                   variant="secondary"
                   size="sm"
                   onClick={info.action}
+                  className="hover:bg-gray-700"
                 >
                   {info.actionLabel}
                 </Button>
@@ -71,8 +72,12 @@ const ContactSection = () => {
             </motion.div>
           ))}
         </div>
+        
+        <div className="text-center mt-16 text-gray-400 text-sm">
+          <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+        </div>
       </div>
-    </section>
+    </footer>
   );
 };
 
