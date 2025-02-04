@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import HeroSection from "../components/HeroSection";
 import SkillsSection from "../components/SkillsSection";
 import ExperienceSection from "../components/ExperienceSection";
+import ProjectsSection from "../components/ProjectsSection";
 
 const Index = () => {
   useEffect(() => {
-    // Smooth scroll behavior
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
       document.documentElement.style.scrollBehavior = "auto";
@@ -17,6 +17,7 @@ const Index = () => {
       <HeroSection />
       <SkillsSection />
       <ExperienceSection />
+      <ProjectsSection />
     </main>
   );
 };
