@@ -3,7 +3,7 @@ import { ArrowDown } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative px-4">
+    <section id="hero" className="min-h-screen flex flex-col items-center justify-center relative px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
