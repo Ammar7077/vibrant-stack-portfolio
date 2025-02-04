@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import { Link } from "react-scroll";
 
 const HeroSection = () => {
   return (
@@ -25,7 +26,16 @@ const HeroSection = () => {
         transition={{ delay: 0.5 }}
         className="absolute bottom-10"
       >
-        <ArrowDown className="animate-bounce w-6 h-6" />
+        <Link
+          to="skills"
+          spy={true}
+          smooth={true}
+          offset={-100}
+          duration={500}
+          className="cursor-pointer hover:text-primary transition-colors"
+        >
+          <ArrowDown className="animate-bounce w-6 h-6" />
+        </Link>
       </motion.div>
     </section>
   );
