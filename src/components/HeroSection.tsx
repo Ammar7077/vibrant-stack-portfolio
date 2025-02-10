@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Link } from "react-scroll";
@@ -11,10 +12,10 @@ const HeroSection = () => {
         transition={{ duration: 0.5 }}
         className="text-center"
       >
-        <span className="text-sm uppercase tracking-widest mb-4 inline-block">Full-Stack Engineer</span>
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          Crafting Digital Experiences
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">
+          Ammar Omari
         </h1>
+        <span className="text-sm uppercase tracking-widest mb-4 inline-block">Full-Stack Engineer</span>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
           Building scalable applications with modern technologies and best practices
         </p>
