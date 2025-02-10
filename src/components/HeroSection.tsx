@@ -24,18 +24,30 @@ const HeroSection = () => {
       />
       
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 20, color: "rgb(147, 51, 234)" }}  // Initial purple color
+        animate={{ opacity: 1, y: 0, color: "hsl(var(--foreground))" }}
         transition={{ duration: 0.3 }}
         className="text-center z-10"
       >
         <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">
           Ammar Omari
         </h1>
-        <span className="text-sm uppercase tracking-widest mb-4 inline-block">Full-Stack Engineer</span>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+        <motion.span 
+          initial={{ opacity: 0, color: "rgb(59, 130, 246)" }}  // Initial blue color
+          animate={{ opacity: 1, color: "hsl(var(--foreground))" }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+          className="text-sm uppercase tracking-widest mb-4 inline-block"
+        >
+          Full-Stack Engineer
+        </motion.span>
+        <motion.p 
+          initial={{ opacity: 0, color: "rgb(234, 88, 12)" }}  // Initial orange color
+          animate={{ opacity: 1, color: "hsl(var(--muted-foreground))" }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+          className="text-lg md:text-xl max-w-2xl mx-auto"
+        >
           Building scalable applications with modern technologies and best practices
-        </p>
+        </motion.p>
       </motion.div>
       
       <motion.div
