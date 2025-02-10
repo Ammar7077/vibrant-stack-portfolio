@@ -15,7 +15,6 @@ const HeroSection = () => {
         innerScale={1}
         outerScale={1.5}
         outerAlpha={0}
-        hasBlendMode={true}
         innerStyle={{
           backgroundColor: 'var(--cursor-color)'
         }}
@@ -27,7 +26,7 @@ const HeroSection = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.3 }}
         className="text-center z-10"
       >
         <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">
@@ -42,7 +41,7 @@ const HeroSection = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
+        transition={{ delay: 0.3, duration: 0.3 }}
         className="absolute bottom-10 z-10"
       >
         <Link
