@@ -2,15 +2,33 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Link } from "react-scroll";
+import AnimatedBackground from "./AnimatedBackground";
+import AnimatedCursor from "react-animated-cursor";
 
 const HeroSection = () => {
   return (
     <section id="hero" className="min-h-screen flex flex-col items-center justify-center relative px-4">
+      <AnimatedBackground />
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={35}
+        innerScale={1}
+        outerScale={1.5}
+        outerAlpha={0}
+        hasBlendMode={true}
+        innerStyle={{
+          backgroundColor: 'var(--cursor-color)'
+        }}
+        outerStyle={{
+          border: '3px solid var(--cursor-color)'
+        }}
+      />
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center"
+        className="text-center z-10"
       >
         <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">
           Ammar Omari
@@ -25,7 +43,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="absolute bottom-10"
+        className="absolute bottom-10 z-10"
       >
         <Link
           to="skills"

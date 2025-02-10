@@ -1,13 +1,77 @@
+
 import { motion } from "framer-motion";
-import { Code2, Database, Layout, Server, Settings, Smartphone } from "lucide-react";
+import { Code2, Database, Layout, Server, Settings, Smartphone, Star, StarHalf } from "lucide-react";
+
+const StarRating = ({ rating }: { rating: number }) => {
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+  const stars = [];
+
+  for (let i = 0; i < fullStars; i++) {
+    stars.push(<Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />);
+  }
+
+  if (hasHalfStar) {
+    stars.push(<StarHalf key="half" className="w-4 h-4 fill-yellow-400 text-yellow-400" />);
+  }
+
+  return <div className="flex gap-0.5 ml-2">{stars}</div>;
+};
 
 const skills = [
-  { icon: <Layout className="w-6 h-6" />, name: "Frontend", tech: ["Next.js", "React.js", "Flutter"] },
-  { icon: <Server className="w-6 h-6" />, name: "Backend", tech: ["Nest.js", "FastAPI", "Node.js"] },
-  { icon: <Database className="w-6 h-6" />, name: "Database", tech: ["PostgreSQL", "MongoDB", "Redis"] },
-  { icon: <Code2 className="w-6 h-6" />, name: "Languages", tech: ["TypeScript", "Python", "Dart"] },
-  { icon: <Settings className="w-6 h-6" />, name: "DevOps", tech: ["Docker", "CI/CD", "AWS"] },
-  { icon: <Smartphone className="w-6 h-6" />, name: "Mobile", tech: ["Flutter", "React Native"] },
+  { 
+    icon: <Layout className="w-6 h-6" />, 
+    name: "Frontend", 
+    tech: [
+      { name: "Next.js", rating: 4 },
+      { name: "React.js", rating: 4 },
+      { name: "Flutter", rating: 5 }
+    ] 
+  },
+  { 
+    icon: <Server className="w-6 h-6" />, 
+    name: "Backend", 
+    tech: [
+      { name: "Nest.js", rating: 5 },
+      { name: "FastAPI", rating: 4 },
+      { name: "Node.js", rating: 4.5 }
+    ] 
+  },
+  { 
+    icon: <Database className="w-6 h-6" />, 
+    name: "Database", 
+    tech: [
+      { name: "PostgreSQL", rating: 4.5 },
+      { name: "MongoDB", rating: 4 },
+      { name: "Redis", rating: 4 }
+    ] 
+  },
+  { 
+    icon: <Code2 className="w-6 h-6" />, 
+    name: "Languages", 
+    tech: [
+      { name: "TypeScript", rating: 4.5 },
+      { name: "Python", rating: 4 },
+      { name: "Dart", rating: 4.5 }
+    ] 
+  },
+  { 
+    icon: <Settings className="w-6 h-6" />, 
+    name: "DevOps", 
+    tech: [
+      { name: "Docker", rating: 4 },
+      { name: "CI/CD", rating: 4 },
+      { name: "AWS", rating: 3.5 }
+    ] 
+  },
+  { 
+    icon: <Smartphone className="w-6 h-6" />, 
+    name: "Mobile", 
+    tech: [
+      { name: "Flutter", rating: 5 },
+      { name: "React Native", rating: 4 }
+    ] 
+  },
 ];
 
 const SkillsSection = () => {
@@ -39,14 +103,14 @@ const SkillsSection = () => {
                 {skill.icon}
                 <h3 className="font-semibold text-xl">{skill.name}</h3>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-col gap-2">
                 {skill.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 bg-secondary rounded-full text-sm"
-                  >
-                    {tech}
-                  </span>
+                  <div key={tech.name} className="flex items-center justify-between">
+                    <span className="px-3 py-1 bg-secondary rounded-full text-sm">
+                      {tech.name}
+                    </span>
+                    <StarRating rating={tech.rating} />
+                  </div>
                 ))}
               </div>
             </motion.div>
