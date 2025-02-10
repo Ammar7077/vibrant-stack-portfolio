@@ -1,4 +1,6 @@
+
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import SkillsSection from "../components/SkillsSection";
@@ -14,15 +16,35 @@ const Index = () => {
     };
   }, []);
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5 }
+  };
+
   return (
-    <main className="min-h-screen pt-16">
+    <motion.main
+      initial="initial"
+      animate="animate"
+      className="min-h-screen pt-16"
+    >
       <Header />
-      <HeroSection />
-      <SkillsSection />
-      <ExperienceSection />
-      <ProjectsSection />
-      <ContactSection />
-    </main>
+      <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
+        <HeroSection />
+      </motion.div>
+      <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
+        <SkillsSection />
+      </motion.div>
+      <motion.div {...fadeInUp} transition={{ delay: 0.4 }}>
+        <ExperienceSection />
+      </motion.div>
+      <motion.div {...fadeInUp} transition={{ delay: 0.5 }}>
+        <ProjectsSection />
+      </motion.div>
+      <motion.div {...fadeInUp} transition={{ delay: 0.6 }}>
+        <ContactSection />
+      </motion.div>
+    </motion.main>
   );
 };
 
