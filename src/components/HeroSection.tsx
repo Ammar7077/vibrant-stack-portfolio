@@ -24,7 +24,7 @@ const HeroSection = () => {
       />
       
       <motion.div
-        initial={{ opacity: 0, y: 20, color: "#8B5CF6" }}  // Vivid Purple
+        initial={{ opacity: 0, y: 20, color: "#EC4899" }}  // Pink
         animate={{ opacity: 1, y: 0, color: "hsl(var(--foreground))" }}
         transition={{ duration: 0.15 }}
         className="text-center z-10"
@@ -33,7 +33,7 @@ const HeroSection = () => {
           Ammar Omari
         </h1>
         <motion.span 
-          initial={{ opacity: 0, color: "#0EA5E9" }}  // Ocean Blue
+          initial={{ opacity: 0, color: "#6366F1" }}  // Indigo
           animate={{ opacity: 1, color: "hsl(var(--foreground))" }}
           transition={{ duration: 0.15, delay: 0.1 }}
           className="text-sm uppercase tracking-widest mb-4 inline-block"
@@ -41,7 +41,7 @@ const HeroSection = () => {
           Full-Stack Engineer
         </motion.span>
         <motion.p 
-          initial={{ opacity: 0, color: "#F97316" }}  // Bright Orange
+          initial={{ opacity: 0, color: "#10B981" }}  // Emerald
           animate={{ opacity: 1, color: "hsl(var(--muted-foreground))" }}
           transition={{ duration: 0.15, delay: 0.2 }}
           className="text-lg md:text-xl max-w-2xl mx-auto"
