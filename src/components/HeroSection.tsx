@@ -26,7 +26,7 @@ const HeroSection = () => {
       <motion.div
         initial={{ opacity: 0, y: 20, color: "#8B5CF6" }}  // Vivid Purple
         animate={{ opacity: 1, y: 0, color: "hsl(var(--foreground))" }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.15 }}
         className="text-center z-10"
       >
         <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">
@@ -35,7 +35,7 @@ const HeroSection = () => {
         <motion.span 
           initial={{ opacity: 0, color: "#0EA5E9" }}  // Ocean Blue
           animate={{ opacity: 1, color: "hsl(var(--foreground))" }}
-          transition={{ duration: 0.3, delay: 0.1 }}
+          transition={{ duration: 0.15, delay: 0.1 }}
           className="text-sm uppercase tracking-widest mb-4 inline-block"
         >
           Full-Stack Engineer
@@ -43,7 +43,7 @@ const HeroSection = () => {
         <motion.p 
           initial={{ opacity: 0, color: "#F97316" }}  // Bright Orange
           animate={{ opacity: 1, color: "hsl(var(--muted-foreground))" }}
-          transition={{ duration: 0.3, delay: 0.2 }}
+          transition={{ duration: 0.15, delay: 0.2 }}
           className="text-lg md:text-xl max-w-2xl mx-auto"
         >
           Building scalable applications with modern technologies and best practices
