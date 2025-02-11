@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Calendar } from "lucide-react";
 
@@ -30,7 +31,7 @@ const ExperienceSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.1 }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
@@ -44,7 +45,7 @@ const ExperienceSection = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.1, delay: index * 0.05 }}
               className="mb-8 relative pl-8 border-l-2 border-primary/20 last:mb-0"
             >
               <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary" />
