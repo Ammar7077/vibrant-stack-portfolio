@@ -24,26 +24,26 @@ const HeroSection = () => {
       />
       
       <motion.div
-        initial={{ opacity: 0, y: 20, color: "#EC4899" }}  // Pink
+        initial={{ opacity: 0, y: 20, color: "#EC4899" }}
         animate={{ opacity: 1, y: 0, color: "hsl(var(--foreground))" }}
-        transition={{ duration: 0.15 }}
+        transition={{ duration: 0.1 }}
         className="text-center z-10"
       >
         <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">
           Ammar Omari
         </h1>
         <motion.span 
-          initial={{ opacity: 0, color: "#6366F1" }}  // Indigo
+          initial={{ opacity: 0, color: "#6366F1" }}
           animate={{ opacity: 1, color: "hsl(var(--foreground))" }}
-          transition={{ duration: 0.15, delay: 0.1 }}
+          transition={{ duration: 0.1, delay: 0.05 }}
           className="text-sm uppercase tracking-widest mb-4 inline-block"
         >
           Full-Stack Engineer
         </motion.span>
         <motion.p 
-          initial={{ opacity: 0, color: "#10B981" }}  // Emerald
+          initial={{ opacity: 0, color: "#10B981" }}
           animate={{ opacity: 1, color: "hsl(var(--muted-foreground))" }}
-          transition={{ duration: 0.15, delay: 0.2 }}
+          transition={{ duration: 0.1, delay: 0.1 }}
           className="text-lg md:text-xl max-w-2xl mx-auto"
         >
           Building scalable applications with modern technologies and best practices
@@ -53,7 +53,7 @@ const HeroSection = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.3 }}
+        transition={{ delay: 0.15, duration: 0.2 }}
         className="absolute bottom-10 z-10"
       >
         <Link
