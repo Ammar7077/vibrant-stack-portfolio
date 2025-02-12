@@ -23,27 +23,27 @@ const skills = [
     icon: <Layout className="w-6 h-6" />, 
     name: "Frontend", 
     tech: [
-      { name: "Next.js", rating: 4 },
-      { name: "React.js", rating: 4 },
-      { name: "Flutter", rating: 5 }
+      { name: "Next.js", rating: 4.5 },
+      { name: "React.js", rating: 4.3 },
+      { name: "Flutter", rating: 4.8 }
     ] 
   },
   { 
     icon: <Server className="w-6 h-6" />, 
     name: "Backend", 
     tech: [
-      { name: "Nest.js", rating: 5 },
-      { name: "FastAPI", rating: 4 },
-      { name: "Node.js", rating: 4.5 }
+      { name: "Nest.js", rating: 4.7 },
+      { name: "FastAPI", rating: 4.3 },
+      { name: "Node.js", rating: 4.3 }
     ] 
   },
   { 
     icon: <Database className="w-6 h-6" />, 
     name: "Database", 
     tech: [
-      { name: "PostgreSQL", rating: 4.5 },
-      { name: "MongoDB", rating: 4 },
-      { name: "Redis", rating: 4 }
+      { name: "MongoDB", rating: 5 },
+      { name: "PostgreSQL", rating: 4.3 },
+      { name: "Redis", rating: 3.9 }
     ] 
   },
   { 
@@ -60,7 +60,7 @@ const skills = [
     name: "DevOps", 
     tech: [
       { name: "Docker", rating: 4 },
-      { name: "CI/CD", rating: 4 },
+      { name: "CI/CD", rating: 4.3 },
       { name: "AWS", rating: 3.5 }
     ] 
   },
@@ -68,8 +68,8 @@ const skills = [
     icon: <Smartphone className="w-6 h-6" />, 
     name: "Mobile", 
     tech: [
-      { name: "Flutter", rating: 5 },
-      { name: "React Native", rating: 4 }
+      { name: "Flutter", rating: 4.8 },
+      { name: "React Native", rating: 3.5 }
     ] 
   },
 ];
