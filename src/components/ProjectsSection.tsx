@@ -2,35 +2,27 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { Card } from "./ui/card";
 
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  link: string;
-  tags: string[];
-}
-
-const projects: Project[] = [
+const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution built with Next.js and NestJS",
-    image: "/placeholder.svg", // Replace with actual project image
-    link: "https://github.com/yourusername/project1",
+    title: "ClientJO.com",
+    description: "Customer Service system with roles-based architecture for handling company calls",
+    image: "/placeholder.svg",
+    link: "https://clientjo.com",
     tags: ["Next.js", "NestJS", "TypeScript"],
   },
   {
-    title: "Mobile App",
-    description: "Cross-platform mobile application developed with Flutter",
-    image: "/placeholder.svg", // Replace with actual project image
-    link: "https://github.com/yourusername/project2",
+    title: "GGE Taxi Booking",
+    description: "Complete taxi booking application ecosystem built for GGE Solutions",
+    image: "/placeholder.svg",
+    link: "https://github.com/Ammar7077",
     tags: ["Flutter", "Dart", "Firebase"],
   },
   {
-    title: "API Service",
-    description: "RESTful API service built with FastAPI and Docker",
-    image: "/placeholder.svg", // Replace with actual project image
-    link: "https://github.com/yourusername/project3",
-    tags: ["FastAPI", "Python", "Docker"],
+    title: "RUDAIN.net",
+    description: "Corporate website development and implementation",
+    image: "/placeholder.svg",
+    link: "https://rudain.net",
+    tags: ["React", "Node.js", "Tailwind"],
   },
 ];
 

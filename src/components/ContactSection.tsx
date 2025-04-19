@@ -1,37 +1,42 @@
+
 import { motion } from "framer-motion";
-import { Mail, MessageSquare, Phone } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail, MessageSquare, Phone } from "lucide-react";
 import { Button } from "./ui/button";
 import { toast } from "./ui/use-toast";
 
+const handleCopyEmail = () => {
+  navigator.clipboard.writeText("ammaromaritop@gmail.com");
+  toast({
+    title: "Email copied to clipboard",
+    description: "You can now paste it anywhere",
+  });
+};
+
+const contactInfo = [
+  {
+    icon: <Mail className="w-6 h-6" />,
+    title: "Email",
+    value: "ammaromaritop@gmail.com",
+    action: handleCopyEmail,
+    actionLabel: "Copy email",
+  },
+  {
+    icon: <Phone className="w-6 h-6" />,
+    title: "Phone",
+    value: "+962 79 00656 49",
+  },
+  {
+    icon: <MessageSquare className="w-6 h-6" />,
+    title: "Social",
+    links: [
+      { icon: <Linkedin className="w-5 h-5" />, url: "https://www.linkedin.com/in/ammar-omari/", label: "LinkedIn" },
+      { icon: <Github className="w-5 h-5" />, url: "https://github.com/Ammar7077", label: "GitHub" },
+      { icon: <Instagram className="w-5 h-5" />, url: "https://www.instagram.com/_ammar_omari_", label: "Instagram" },
+    ],
+  },
+];
+
 const ContactSection = () => {
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText("your.email@example.com");
-    toast({
-      title: "Email copied to clipboard",
-      description: "You can now paste it anywhere",
-    });
-  };
-
-  const contactInfo = [
-    {
-      icon: <Mail className="w-6 h-6" />,
-      title: "Email",
-      value: "your.email@example.com",
-      action: handleCopyEmail,
-      actionLabel: "Copy email",
-    },
-    {
-      icon: <Phone className="w-6 h-6" />,
-      title: "Phone",
-      value: "+1 234 567 890",
-    },
-    {
-      icon: <MessageSquare className="w-6 h-6" />,
-      title: "Social",
-      value: "@yourusername",
-    },
-  ];
-
   return (
     <footer id="contact" className="bg-[#1A1F2C] text-white">
       <div className="container mx-auto px-4 py-20">
@@ -58,7 +63,7 @@ const ContactSection = () => {
             >
               <div className="mb-4 flex justify-center text-gray-300">{info.icon}</div>
               <h3 className="font-semibold mb-2">{info.title}</h3>
-              <p className="text-gray-400 mb-4">{info.value}</p>
+              {info.value && <p className="text-gray-400 mb-4">{info.value}</p>}
               {info.action && (
                 <Button
                   variant="secondary"
@@ -69,12 +74,27 @@ const ContactSection = () => {
                   {info.actionLabel}
                 </Button>
               )}
+              {info.links && (
+                <div className="flex justify-center gap-4">
+                  {info.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      {link.icon}
+                    </a>
+                  ))}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
         
         <div className="text-center mt-16 text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Ammar Omari. All rights reserved.</p>
         </div>
       </div>
     </footer>

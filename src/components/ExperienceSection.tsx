@@ -4,23 +4,29 @@ import { Calendar } from "lucide-react";
 
 const experiences = [
   {
-    title: "Senior Full-Stack Engineer",
-    company: "Tech Company",
-    period: "2022 - Present",
-    description: "Leading development of scalable web applications using Next.js and Node.js",
-  },
-  {
-    title: "Full-Stack Developer",
-    company: "Digital Agency",
-    period: "2020 - 2022",
-    description: "Built and maintained multiple client projects using React and Python",
+    title: "Full-Stack Engineer",
+    company: "ITC International Technology Consultancy",
+    period: "Jul 2024 - Present",
+    description: "Leading development of scalable web applications, managing large-scale data operations (200TB+), and implementing advanced features with JAIS-GPT integration. Building full-stack solutions with NestJS, React, and Next.js.",
   },
   {
     title: "Software Engineer",
-    company: "Startup",
-    period: "2018 - 2020",
-    description: "Developed mobile applications using Flutter and Firebase",
+    company: "AwaelJO-Technologies",
+    period: "Oct 2023 - Mar 2024",
+    description: "Developed dynamic mobile and web applications using Flutter, ASP.NET, and NodeJS. Implemented Agile methodologies and delivered customized CRM solutions.",
   },
+  {
+    title: "Full-Stack Developer",
+    company: "Digital Arena Solutions",
+    period: "Jul 2022 - Mar 2023",
+    description: "Delivered web and mobile applications using Flutter and NestJS, focusing on system performance optimization.",
+  },
+  {
+    title: "Various Freelance Roles",
+    company: "Multiple Companies",
+    period: "2023 - 2024",
+    description: "Worked on multiple freelance projects including customer service systems, taxi booking applications, and corporate websites.",
+  }
 ];
 
 const ExperienceSection = () => {
