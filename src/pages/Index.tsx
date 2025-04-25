@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
+import AnimatedShapesSection from "../components/AnimatedShapesSection";
 import SkillsSection from "../components/SkillsSection";
 import ExperienceSection from "../components/ExperienceSection";
 import ProjectsSection from "../components/ProjectsSection";
@@ -33,15 +34,18 @@ const Index = () => {
         <HeroSection />
       </motion.div>
       <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
-        <SkillsSection />
+        <AnimatedShapesSection />
       </motion.div>
       <motion.div {...fadeInUp} transition={{ delay: 0.4 }}>
-        <ExperienceSection />
+        <SkillsSection />
       </motion.div>
       <motion.div {...fadeInUp} transition={{ delay: 0.5 }}>
-        <ProjectsSection />
+        <ExperienceSection />
       </motion.div>
       <motion.div {...fadeInUp} transition={{ delay: 0.6 }}>
+        <ProjectsSection />
+      </motion.div>
+      <motion.div {...fadeInUp} transition={{ delay: 0.7 }}>
         <ContactSection />
       </motion.div>
     </motion.main>
