@@ -6,7 +6,7 @@ import { useRef } from 'react';
 import * as THREE from 'three';
 
 const AnimatedShapes = () => {
-  const groupRef = useRef();
+  const groupRef = useRef<THREE.Group>(null);
 
   return (
     <group ref={groupRef}>
@@ -22,7 +22,7 @@ const AnimatedShapes = () => {
           rotation={[i * 0.3, i * 0.4, 0]}
         >
           <boxGeometry args={[0.7, 0.7, 0.7]} />
-          <meshStandardMaterial color="#6E59A5" />
+          <meshStandardMaterial color={new THREE.Color("#6E59A5")} />
         </mesh>
       ))}
 
@@ -37,7 +37,7 @@ const AnimatedShapes = () => {
           ]}
         >
           <sphereGeometry args={[0.3, 16, 16]} />
-          <meshStandardMaterial color="#D946EF" />
+          <meshStandardMaterial color={new THREE.Color("#D946EF")} />
         </mesh>
       ))}
 
@@ -53,7 +53,7 @@ const AnimatedShapes = () => {
           rotation={[i * 0.5, 0, i * 0.3]}
         >
           <coneGeometry args={[0.4, 0.8, 3]} />
-          <meshStandardMaterial color="#0EA5E9" />
+          <meshStandardMaterial color={new THREE.Color("#0EA5E9")} />
         </mesh>
       ))}
     </group>
