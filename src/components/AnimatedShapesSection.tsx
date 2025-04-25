@@ -40,7 +40,7 @@ const AnimatedShapes = () => {
           rotation={[i * 0.3, i * 0.4, 0]}
         >
           <boxGeometry args={[0.7, 0.7, 0.7]} />
-          <meshStandardMaterial color={new THREE.Color("#6E59A5")} emissive="#6E59A5" emissiveIntensity={0.2} />
+          <meshStandardMaterial color={new THREE.Color("#6E59A5")} emissive="#6E59A5" emissiveIntensity={0.4} />
         </mesh>
       ))}
 
@@ -55,7 +55,7 @@ const AnimatedShapes = () => {
           ]}
         >
           <sphereGeometry args={[0.3, 16, 16]} />
-          <meshStandardMaterial color={new THREE.Color("#D946EF")} emissive="#D946EF" emissiveIntensity={0.2} />
+          <meshStandardMaterial color={new THREE.Color("#D946EF")} emissive="#D946EF" emissiveIntensity={0.4} />
         </mesh>
       ))}
 
@@ -71,7 +71,7 @@ const AnimatedShapes = () => {
           rotation={[i * 0.5, 0, i * 0.3]}
         >
           <coneGeometry args={[0.4, 0.8, 3]} />
-          <meshStandardMaterial color={new THREE.Color("#0EA5E9")} emissive="#0EA5E9" emissiveIntensity={0.2} />
+          <meshStandardMaterial color={new THREE.Color("#0EA5E9")} emissive="#0EA5E9" emissiveIntensity={0.4} />
         </mesh>
       ))}
     </group>
@@ -80,16 +80,16 @@ const AnimatedShapes = () => {
 
 const AnimatedShapesSection = () => {
   return (
-    <section className="py-20 relative h-[600px] bg-background overflow-hidden" id="animated-shapes">
+    <section className="py-20 relative h-[600px] bg-black overflow-hidden" id="animated-shapes">
       <div className="absolute inset-0 w-full h-full z-0">
         <Canvas 
           camera={{ position: [0, 0, 10], fov: 50 }}
           style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0 }}
           gl={{ antialias: true, alpha: true }}
         >
-          <ambientLight intensity={0.8} />
-          <pointLight position={[10, 10, 10]} intensity={1.5} />
-          <pointLight position={[-10, -10, -10]} intensity={0.5} color="#ffffff" />
+          <ambientLight intensity={1.5} />
+          <pointLight position={[10, 10, 10]} intensity={2} />
+          <pointLight position={[-10, -10, -10]} intensity={1} color="#ffffff" />
           <AnimatedShapes />
           <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} enablePan={false} />
         </Canvas>
@@ -101,8 +101,8 @@ const AnimatedShapesSection = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="relative z-10 flex items-center justify-center h-full"
       >
-        <div className="bg-background/80 backdrop-blur-md p-6 rounded-lg shadow-lg">
-          <h2 className="text-3xl md:text-5xl font-bold text-center max-w-3xl mx-auto text-foreground">
+        <div className="bg-black/80 backdrop-blur-md p-8 rounded-lg shadow-lg border border-purple-500/30">
+          <h2 className="text-3xl md:text-5xl font-bold text-center max-w-3xl mx-auto text-white">
             Build your Web / Mobile Application with us!
           </h2>
         </div>
