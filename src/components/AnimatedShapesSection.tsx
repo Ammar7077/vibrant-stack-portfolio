@@ -80,12 +80,12 @@ const AnimatedShapes = () => {
 
 const AnimatedShapesSection = () => {
   return (
-    <section className="py-20 relative h-[600px] bg-background/80 backdrop-blur-sm overflow-hidden">
-      <div className="absolute inset-0 w-full h-full">
-        <Canvas
+    <section className="py-20 relative h-[600px] bg-background overflow-hidden" id="animated-shapes">
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Canvas 
           camera={{ position: [0, 0, 10], fov: 50 }}
-          className="!absolute inset-0 w-full h-full"
-          style={{ position: 'absolute' }}
+          style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0 }}
+          gl={{ antialias: true, alpha: true }}
         >
           <ambientLight intensity={0.8} />
           <pointLight position={[10, 10, 10]} intensity={1.5} />
@@ -101,7 +101,7 @@ const AnimatedShapesSection = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="relative z-10 flex items-center justify-center h-full"
       >
-        <div className="bg-background/40 backdrop-blur-md p-6 rounded-lg shadow-lg">
+        <div className="bg-background/80 backdrop-blur-md p-6 rounded-lg shadow-lg">
           <h2 className="text-3xl md:text-5xl font-bold text-center max-w-3xl mx-auto text-foreground">
             Build your Web / Mobile Application with us!
           </h2>
