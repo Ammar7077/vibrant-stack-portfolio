@@ -2,11 +2,29 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 
 const AnimatedShapes = () => {
   const groupRef = useRef<THREE.Group>(null);
+
+  useEffect(() => {
+    // Animation loop for manual rotation
+    let animationFrame: number;
+    
+    const animate = () => {
+      if (groupRef.current) {
+        groupRef.current.rotation.y += 0.002;
+        groupRef.current.rotation.x += 0.001;
+      }
+      animationFrame = requestAnimationFrame(animate);
+    };
+    
+    animate();
+    
+    // Clean up animation frame on unmount
+    return () => cancelAnimationFrame(animationFrame);
+  }, []);
 
   return (
     <group ref={groupRef}>
@@ -22,7 +40,7 @@ const AnimatedShapes = () => {
           rotation={[i * 0.3, i * 0.4, 0]}
         >
           <boxGeometry args={[0.7, 0.7, 0.7]} />
-          <meshStandardMaterial color={new THREE.Color("#6E59A5")} />
+          <meshStandardMaterial color={new THREE.Color("#6E59A5")} emissive="#6E59A5" emissiveIntensity={0.2} />
         </mesh>
       ))}
 
@@ -37,7 +55,7 @@ const AnimatedShapes = () => {
           ]}
         >
           <sphereGeometry args={[0.3, 16, 16]} />
-          <meshStandardMaterial color={new THREE.Color("#D946EF")} />
+          <meshStandardMaterial color={new THREE.Color("#D946EF")} emissive="#D946EF" emissiveIntensity={0.2} />
         </mesh>
       ))}
 
@@ -53,7 +71,7 @@ const AnimatedShapes = () => {
           rotation={[i * 0.5, 0, i * 0.3]}
         >
           <coneGeometry args={[0.4, 0.8, 3]} />
-          <meshStandardMaterial color={new THREE.Color("#0EA5E9")} />
+          <meshStandardMaterial color={new THREE.Color("#0EA5E9")} emissive="#0EA5E9" emissiveIntensity={0.2} />
         </mesh>
       ))}
     </group>
@@ -62,26 +80,32 @@ const AnimatedShapes = () => {
 
 const AnimatedShapesSection = () => {
   return (
-    <section className="py-20 relative h-[600px] bg-background/80 backdrop-blur-sm">
-      <Canvas
-        camera={{ position: [0, 0, 10], fov: 50 }}
-        className="absolute inset-0"
-      >
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} />
-        <AnimatedShapes />
-        <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1} />
-      </Canvas>
+    <section className="py-20 relative h-[600px] bg-background/80 backdrop-blur-sm overflow-hidden">
+      <div className="absolute inset-0 w-full h-full">
+        <Canvas
+          camera={{ position: [0, 0, 10], fov: 50 }}
+          className="!absolute inset-0 w-full h-full"
+          style={{ position: 'absolute' }}
+        >
+          <ambientLight intensity={0.8} />
+          <pointLight position={[10, 10, 10]} intensity={1.5} />
+          <pointLight position={[-10, -10, -10]} intensity={0.5} color="#ffffff" />
+          <AnimatedShapes />
+          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} enablePan={false} />
+        </Canvas>
+      </div>
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="absolute inset-0 flex items-center justify-center"
+        className="relative z-10 flex items-center justify-center h-full"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-center max-w-3xl mx-auto px-4 text-foreground z-10">
-          Build your Web / Mobile Application with us!
-        </h2>
+        <div className="bg-background/40 backdrop-blur-md p-6 rounded-lg shadow-lg">
+          <h2 className="text-3xl md:text-5xl font-bold text-center max-w-3xl mx-auto text-foreground">
+            Build your Web / Mobile Application with us!
+          </h2>
+        </div>
       </motion.div>
     </section>
   );
