@@ -22,5 +22,8 @@ export default defineConfig(({ mode }) => ({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+  },
+  optimizeDeps: {
+    exclude: ['lovable-tagger'],
   }
 }));
