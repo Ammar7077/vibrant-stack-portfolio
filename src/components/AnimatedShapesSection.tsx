@@ -85,8 +85,9 @@ const AnimatedShapesSection = () => {
         <Canvas 
           camera={{ position: [0, 0, 10], fov: 50 }}
           style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0 }}
-          gl={{ antialias: true, alpha: true }}
+          gl={{ antialias: true, alpha: false }}
         >
+          <color attach="background" args={["#000000"]} />
           <ambientLight intensity={1.5} />
           <pointLight position={[10, 10, 10]} intensity={2} />
           <pointLight position={[-10, -10, -10]} intensity={1} color="#ffffff" />
