@@ -46,7 +46,7 @@ const HeroSection = () => {
           transition={{ duration: 0.1, delay: 0.1 }}
           className="text-lg md:text-xl max-w-2xl mx-auto"
         >
-          Building scalable applications with modern technologies and best practices
+          Building scalable applications with modern technologies and best practices!
         </motion.p>
       </motion.div>
       
@@ -54,14 +54,14 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.15, duration: 0.2 }}
-        className="absolute bottom-10 z-10"
+        className="absolute bottom-10 z-10 pb-28"
       >
         <Link
-          to="skills"
+          to="animated-shapes"
           spy={true}
           smooth={true}
           offset={-100}
-          duration={500}
+          duration={50}
           className="cursor-pointer hover:text-primary transition-colors"
         >
           <ArrowDown className="animate-bounce w-6 h-6" />

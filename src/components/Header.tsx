@@ -81,7 +81,7 @@ const Header = () => {
                       spy={true}
                       smooth={true}
                       offset={-100}
-                      duration={500}
+                      duration={50}
                       className="text-sm font-medium cursor-pointer hover:text-primary transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -105,7 +105,7 @@ const Header = () => {
                   spy={true}
                   smooth={true}
                   offset={-100}
-                  duration={500}
+                  duration={50}
                   className="text-sm font-medium cursor-pointer hover:text-primary transition-colors"
                 >
                   {item.label}
