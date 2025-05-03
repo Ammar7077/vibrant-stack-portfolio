@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { 
   Code2, Database, Layout, Server, Settings, Smartphone, 
-  Star, StarHalf, GitBranch, FileCode, Braces, PackageOpen,
+  Star, StarHalf, FileCode, Braces, PackageOpen,
   Layers, Cpu, Network, Lock, Wifi, ArrowRight, 
   CloudCog, Monitor, Globe, FolderGit
 } from "lucide-react";
@@ -23,7 +23,7 @@ const StarRating = ({ rating }: { rating: number }) => {
   return <div className="flex gap-0.5 ml-2">{stars}</div>;
 };
 
-// Updated skills data with reorganized categories for better presentation
+// Updated skills data with reorganized categories
 const skills = [
   { 
     icon: <Layout className="w-6 h-6" />, 
@@ -34,7 +34,9 @@ const skills = [
       { name: "Tailwind CSS", rating: 5 },
       { name: "Material UI", rating: 5 },
       { name: "HTML5", rating: 5 },
-      { name: "CSS3", rating: 5 }
+      { name: "CSS3", rating: 5 },
+      { name: "State Management", rating: 5 },
+      { name: "Redux", rating: 4 }
     ] 
   },
   { 
@@ -43,7 +45,9 @@ const skills = [
     tech: [
       { name: "Flutter", rating: 5 },
       { name: "React Native", rating: 4 },
-      { name: "GetX and Provider", rating: 5 }
+      { name: "GetX and Provider", rating: 5 },
+      { name: "State Management", rating: 5 },
+      { name: "Redux", rating: 4 }
     ] 
   },
   { 
@@ -54,20 +58,21 @@ const skills = [
       { name: "Express.js", rating: 5 },
       { name: "FastAPI", rating: 4 },
       { name: "Node.js", rating: 5 },
-      { name: "WebSockets", rating: 4 }
+      { name: "WebSockets", rating: 4 },
+      { name: "JWT", rating: 5 },
+      { name: "Axios", rating: 5 }
     ] 
   },
   { 
     icon: <Database className="w-6 h-6" />, 
     name: "Database Technologies", 
     tech: [
-      { name: "MongoDB", rating: 5 },
+      { name: "MongoDB/Mongoose", rating: 5 },
       { name: "PostgreSQL", rating: 4 },
       { name: "MySQL", rating: 3 },
       { name: "Microsoft SQL Server", rating: 2 },
       { name: "Redis", rating: 3 },
-      { name: "TypeORM", rating: 4 },
-      { name: "Mongoose", rating: 5 }
+      { name: "TypeORM", rating: 4 }
     ] 
   },
   { 
@@ -77,11 +82,7 @@ const skills = [
       { name: "JavaScript", rating: 5 },
       { name: "TypeScript", rating: 5 },
       { name: "Python", rating: 4 },
-      { name: "Dart", rating: 4 },
-      { name: "State Management", rating: 5 },
-      { name: "Redux", rating: 4 },
-      { name: "JWT", rating: 5 },
-      { name: "Axios", rating: 5 }
+      { name: "Dart", rating: 4 }
     ] 
   },
   { 
@@ -95,7 +96,9 @@ const skills = [
       { name: "Custom Server", rating: 5 },
       { name: "Linux Servers", rating: 5 },
       { name: "AWS", rating: 3 },
-      { name: "Azure", rating: 3 }
+      { name: "Azure", rating: 3 },
+      { name: "DNS Configuration", rating: 4 },
+      { name: "Google Play Console", rating: 5 }
     ] 
   },
   {
@@ -103,12 +106,16 @@ const skills = [
     name: "Development Tools",
     tech: [
       { name: "Git/GitHub", rating: 5 },
+      { name: "FTP/SFTP", rating: 5 }
+    ]
+  },
+  {
+    icon: <FileCode className="w-6 h-6" />,
+    name: "Best Practices",
+    tech: [
       { name: "Performance Optimization", rating: 5 },
       { name: "AI Integration", rating: 5 },
-      { name: "Clean Code Principles", rating: 4 },
-      { name: "FTP/SFTP", rating: 5 },
-      { name: "DNS Configuration", rating: 4 },
-      { name: "Google Play Console", rating: 5 }
+      { name: "Clean Code Principles", rating: 4 }
     ]
   }
 ];
