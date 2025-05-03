@@ -23,22 +23,23 @@ const StarRating = ({ rating }: { rating: number }) => {
   return <div className="flex gap-0.5 ml-2">{stars}</div>;
 };
 
+// Updated skills data with reorganized categories for better presentation
 const skills = [
   { 
     icon: <Layout className="w-6 h-6" />, 
-    name: "Frontend", 
+    name: "Frontend Development", 
     tech: [
       { name: "Next.js", rating: 5 },
       { name: "React.js", rating: 5 },
-      { name: "Tailwind", rating: 5 },
+      { name: "Tailwind CSS", rating: 5 },
       { name: "Material UI", rating: 5 },
-      { name: "HTML", rating: 5 },
-      { name: "CSS", rating: 5 }
+      { name: "HTML5", rating: 5 },
+      { name: "CSS3", rating: 5 }
     ] 
   },
   { 
     icon: <Smartphone className="w-6 h-6" />, 
-    name: "Mobile", 
+    name: "Mobile Development", 
     tech: [
       { name: "Flutter", rating: 5 },
       { name: "React Native", rating: 4 },
@@ -47,7 +48,7 @@ const skills = [
   },
   { 
     icon: <Server className="w-6 h-6" />, 
-    name: "Backend", 
+    name: "Backend Development", 
     tech: [
       { name: "Nest.js", rating: 5 },
       { name: "Express.js", rating: 5 },
@@ -58,7 +59,7 @@ const skills = [
   },
   { 
     icon: <Database className="w-6 h-6" />, 
-    name: "Database", 
+    name: "Database Technologies", 
     tech: [
       { name: "MongoDB", rating: 5 },
       { name: "PostgreSQL", rating: 4 },
@@ -71,7 +72,7 @@ const skills = [
   },
   { 
     icon: <Code2 className="w-6 h-6" />, 
-    name: "Languages & Core", 
+    name: "Programming Languages", 
     tech: [
       { name: "JavaScript", rating: 5 },
       { name: "TypeScript", rating: 5 },
@@ -98,14 +99,14 @@ const skills = [
     ] 
   },
   {
-    icon: <GitBranch className="w-6 h-6" />,
-    name: "Other Skills",
+    icon: <FolderGit className="w-6 h-6" />,
+    name: "Development Tools",
     tech: [
       { name: "Git/GitHub", rating: 5 },
       { name: "Performance Optimization", rating: 5 },
-      { name: "AI Chatbot Integration", rating: 5 },
+      { name: "AI Integration", rating: 5 },
       { name: "Clean Code Principles", rating: 4 },
-      { name: "FTP Integration", rating: 5 },
+      { name: "FTP/SFTP", rating: 5 },
       { name: "DNS Configuration", rating: 4 },
       { name: "Google Play Console", rating: 5 }
     ]
