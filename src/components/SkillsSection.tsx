@@ -1,6 +1,11 @@
 
 import { motion } from "framer-motion";
-import { Code2, Database, Layout, Server, Settings, Smartphone, Star, StarHalf } from "lucide-react";
+import { 
+  Code2, Database, Layout, Server, Settings, Smartphone, 
+  Star, StarHalf, Github, Python, Dart, Html, Css, Javascript, 
+  Typescript, React, Redux, Nextjs, ReactNative, Flutter, Node, 
+  Mongodb, Docker, GitBranch
+} from "lucide-react";
 
 const StarRating = ({ rating }: { rating: number }) => {
   const fullStars = Math.floor(rating);
@@ -23,18 +28,32 @@ const skills = [
     icon: <Layout className="w-6 h-6" />, 
     name: "Frontend", 
     tech: [
-      { name: "Next.js", rating: 4.5 },
-      { name: "React.js", rating: 4.3 },
-      { name: "Flutter", rating: 4.8 }
+      { name: "Next.js", rating: 5 },
+      { name: "React.js", rating: 5 },
+      { name: "Tailwind", rating: 5 },
+      { name: "Material UI", rating: 5 },
+      { name: "HTML", rating: 5 },
+      { name: "CSS", rating: 5 }
+    ] 
+  },
+  { 
+    icon: <Smartphone className="w-6 h-6" />, 
+    name: "Mobile", 
+    tech: [
+      { name: "Flutter", rating: 5 },
+      { name: "React Native", rating: 4 },
+      { name: "GetX and Provider", rating: 5 }
     ] 
   },
   { 
     icon: <Server className="w-6 h-6" />, 
     name: "Backend", 
     tech: [
-      { name: "Nest.js", rating: 4.7 },
-      { name: "FastAPI", rating: 4.3 },
-      { name: "Node.js", rating: 4.3 }
+      { name: "Nest.js", rating: 5 },
+      { name: "Express.js", rating: 5 },
+      { name: "FastAPI", rating: 4 },
+      { name: "Node.js", rating: 5 },
+      { name: "WebSockets", rating: 4 }
     ] 
   },
   { 
@@ -42,36 +61,55 @@ const skills = [
     name: "Database", 
     tech: [
       { name: "MongoDB", rating: 5 },
-      { name: "PostgreSQL", rating: 4.3 },
-      { name: "Redis", rating: 3.9 }
+      { name: "PostgreSQL", rating: 4 },
+      { name: "MySQL", rating: 3 },
+      { name: "Microsoft SQL Server", rating: 2 },
+      { name: "Redis", rating: 3 },
+      { name: "TypeORM", rating: 4 },
+      { name: "Mongoose", rating: 5 }
     ] 
   },
   { 
     icon: <Code2 className="w-6 h-6" />, 
-    name: "Languages", 
+    name: "Languages & Core", 
     tech: [
-      { name: "TypeScript", rating: 4.5 },
+      { name: "JavaScript", rating: 5 },
+      { name: "TypeScript", rating: 5 },
       { name: "Python", rating: 4 },
-      { name: "Dart", rating: 4.5 }
+      { name: "Dart", rating: 4 },
+      { name: "State Management", rating: 5 },
+      { name: "Redux", rating: 4 },
+      { name: "JWT", rating: 5 },
+      { name: "Axios", rating: 5 }
     ] 
   },
   { 
     icon: <Settings className="w-6 h-6" />, 
-    name: "DevOps", 
+    name: "DevOps & Deployment", 
     tech: [
       { name: "Docker", rating: 4 },
-      { name: "CI/CD", rating: 4.3 },
-      { name: "AWS", rating: 3.5 }
+      { name: "CI/CD", rating: 4 },
+      { name: "Vercel", rating: 5 },
+      { name: "Netlify", rating: 4 },
+      { name: "Custom Server", rating: 5 },
+      { name: "Linux Servers", rating: 5 },
+      { name: "AWS", rating: 3 },
+      { name: "Azure", rating: 3 }
     ] 
   },
-  { 
-    icon: <Smartphone className="w-6 h-6" />, 
-    name: "Mobile", 
+  {
+    icon: <GitBranch className="w-6 h-6" />,
+    name: "Other Skills",
     tech: [
-      { name: "Flutter", rating: 4.8 },
-      { name: "React Native", rating: 3.5 }
-    ] 
-  },
+      { name: "Git/GitHub", rating: 5 },
+      { name: "Performance Optimization", rating: 5 },
+      { name: "AI Chatbot Integration", rating: 5 },
+      { name: "Clean Code Principles", rating: 4 },
+      { name: "FTP Integration", rating: 5 },
+      { name: "DNS Configuration", rating: 4 },
+      { name: "Google Play Console", rating: 5 }
+    ]
+  }
 ];
 
 const SkillsSection = () => {
