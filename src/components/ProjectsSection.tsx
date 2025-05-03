@@ -8,21 +8,21 @@ const projects = [
     description: "Customer Service system with roles-based architecture for handling company calls",
     image: "/placeholder.svg",
     link: "https://clientjo.com",
-    tags: ["Next.js", "NestJS", "TypeScript"],
+    tags: ["Full-Stack", "Next.js", "NestJS", "TypeScript", "MySQL", "Voice Call integrations", "PHP Laravel"],
   },
   {
-    title: "GGE Taxi Booking",
-    description: "Complete taxi booking application ecosystem built for GGE Solutions",
+    title: "Taxi & Towing Booking",
+    description: "Complete taxi & towing booking application ecosystem built for GGE Solutions",
     image: "/placeholder.svg",
     link: "https://github.com/Ammar7077",
-    tags: ["Flutter", "Dart", "Firebase"],
+    tags: ["Frontend", "Flutter", "Dart", "GetX", "Firebase", "FCM"],
   },
   {
     title: "RUDAIN.net",
-    description: "Corporate website development and implementation",
+    description: "RUDAIN NFC Business Cards, Corporate website development and implementation",
     image: "/placeholder.svg",
-    link: "https://rudain.net",
-    tags: ["React", "Node.js", "Tailwind"],
+    link: "https://drive.google.com/drive/folders/1N4J0qHJUBSeYEzPd0eFKyQfL4jhMAjLh?usp=sharing",
+    tags: ["Full-Stack", "Flutter Web", "Dart", "Provider", "FCM", "NestJS", "TypeScript", "MongoDB", "Mongoose", "Firebase Auth"],
   },
 ];
 

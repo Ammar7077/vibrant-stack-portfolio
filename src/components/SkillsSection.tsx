@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { 
   Code2, Database, Layout, Server, Settings, Smartphone, 
@@ -9,15 +8,25 @@ import {
 
 const StarRating = ({ rating }: { rating: number }) => {
   const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 !== 0;
+  const partialFill = (rating % 1) * 100; // Calculate the percentage fill for the partial star
   const stars = [];
 
   for (let i = 0; i < fullStars; i++) {
     stars.push(<Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />);
   }
 
-  if (hasHalfStar) {
-    stars.push(<StarHalf key="half" className="w-4 h-4 fill-yellow-400 text-yellow-400" />);
+  if (partialFill > 0) {
+    stars.push(
+      <div key="partial" className="relative w-4 h-4">
+        <Star className="absolute w-4 h-4 text-white" />
+        <Star
+          className="absolute w-4 h-4 text-yellow-400"
+          style={{
+            clipPath: `inset(0 ${100 - partialFill}% 0 0)`, // Clip the star to show partial fill
+          }}
+        />
+      </div>
+    );
   }
 
   return <div className="flex gap-0.5 ml-2">{stars}</div>;
@@ -32,11 +41,10 @@ const skills = [
       { name: "Next.js", rating: 5 },
       { name: "React.js", rating: 5 },
       { name: "Tailwind CSS", rating: 5 },
-      { name: "Material UI", rating: 5 },
-      { name: "HTML5", rating: 5 },
-      { name: "CSS3", rating: 5 },
-      { name: "State Management", rating: 5 },
-      { name: "Redux", rating: 4 }
+      { name: "Material UI", rating: 4.7 },
+      { name: "Redux", rating: 4.7 },
+      { name: "HTML5", rating: 4.7 },
+      { name: "CSS3", rating: 4.7 },
     ] 
   },
   { 
@@ -44,10 +52,9 @@ const skills = [
     name: "Mobile Development", 
     tech: [
       { name: "Flutter", rating: 5 },
-      { name: "React Native", rating: 4 },
       { name: "GetX and Provider", rating: 5 },
-      { name: "State Management", rating: 5 },
-      { name: "Redux", rating: 4 }
+      { name: "React Native", rating: 4.7 },
+      { name: "Redux", rating: 4.7 },
     ] 
   },
   { 
@@ -55,12 +62,11 @@ const skills = [
     name: "Backend Development", 
     tech: [
       { name: "Nest.js", rating: 5 },
-      { name: "Express.js", rating: 5 },
-      { name: "FastAPI", rating: 4 },
-      { name: "Node.js", rating: 5 },
-      { name: "WebSockets", rating: 4 },
+      { name: "FastAPI", rating: 5 },
       { name: "JWT", rating: 5 },
-      { name: "Axios", rating: 5 }
+      { name: "Node.js", rating: 4.7 },
+      { name: "WebSockets", rating: 4.7 },
+      { name: "Express.js", rating: 4.6 },
     ] 
   },
   { 
@@ -68,11 +74,11 @@ const skills = [
     name: "Database Technologies", 
     tech: [
       { name: "MongoDB/Mongoose", rating: 5 },
-      { name: "PostgreSQL", rating: 4 },
-      { name: "MySQL", rating: 3 },
-      { name: "Microsoft SQL Server", rating: 2 },
-      { name: "Redis", rating: 3 },
-      { name: "TypeORM", rating: 4 }
+      { name: "TypeORM", rating: 5 },
+      { name: "PostgreSQL", rating: 4.7 },
+      { name: "MySQL", rating: 4.45 },
+      { name: "Redis", rating: 4.25 },
+      { name: "Microsoft SQL Server", rating: 3.8 },
     ] 
   },
   { 
@@ -81,24 +87,26 @@ const skills = [
     tech: [
       { name: "JavaScript", rating: 5 },
       { name: "TypeScript", rating: 5 },
-      { name: "Python", rating: 4 },
-      { name: "Dart", rating: 4 }
+      { name: "Python", rating: 5 },
+      { name: "Dart", rating: 5 },
+      { name: "C#", rating: 4.2 },
+      { name: "C/C++", rating: 4.2 },
     ] 
   },
   { 
     icon: <Settings className="w-6 h-6" />, 
     name: "DevOps & Deployment", 
     tech: [
-      { name: "Docker", rating: 4 },
-      { name: "CI/CD", rating: 4 },
       { name: "Vercel", rating: 5 },
-      { name: "Netlify", rating: 4 },
-      { name: "Custom Server", rating: 5 },
-      { name: "Linux Servers", rating: 5 },
-      { name: "AWS", rating: 3 },
-      { name: "Azure", rating: 3 },
-      { name: "DNS Configuration", rating: 4 },
-      { name: "Google Play Console", rating: 5 }
+      { name: "Netlify", rating: 5 },
+      { name: "Custom Server", rating: 4.6 },
+      { name: "Linux Servers", rating: 4.6 },
+      { name: "DNS Configuration", rating: 4.5 },
+      { name: "Google Play Console", rating: 4.5 },
+      { name: "Docker", rating: 4.3 },
+      { name: "Azure", rating: 4.1 },
+      { name: "CI/CD", rating: 4 },
+      { name: "AWS", rating: 3.6 },
     ] 
   },
   {
@@ -113,9 +121,10 @@ const skills = [
     icon: <FileCode className="w-6 h-6" />,
     name: "Best Practices",
     tech: [
-      { name: "Performance Optimization", rating: 5 },
-      { name: "AI Integration", rating: 5 },
-      { name: "Clean Code Principles", rating: 4 }
+      { name: "State Management", rating: 5 },
+      { name: "Clean Code Principles", rating: 4.8 },
+      { name: "Performance Optimization", rating: 4.8 },
+      { name: "AI Integration", rating: 4.8 },
     ]
   }
 ];
