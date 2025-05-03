@@ -2,9 +2,9 @@
 import { motion } from "framer-motion";
 import { 
   Code2, Database, Layout, Server, Settings, Smartphone, 
-  Star, StarHalf, Github, Python, Dart, Html, Css, Javascript, 
-  Typescript, React, Redux, Nextjs, ReactNative, Flutter, Node, 
-  Mongodb, Docker, GitBranch
+  Star, StarHalf, GitBranch, FileCode, Braces, PackageOpen,
+  Layers, Cpu, Network, Lock, Wifi, ArrowRight, 
+  CloudCog, Monitor, Globe, FolderGit
 } from "lucide-react";
 
 const StarRating = ({ rating }: { rating: number }) => {
